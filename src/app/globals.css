@@ -4,82 +4,15 @@
 
 @theme {
 	/* === Primary and Secondary Colors === */
-	--color-primary: #ff99c8;
-	--color-primary-variant: #ff3870;
-	--color-secondary: #fcf6bd;
-	--color-secondary-variant: #fbee4b;
-
-	/* === Primary Tints & Shades (Carnation Pink) === */
-	--color-primary-50: #ffd2e1;
-	--color-primary-100: #ffc2d6;
-	--color-primary-200: #ffb2cb;
-	--color-primary-300: #ffa2c0;
-	--color-primary-400: #ff91b5;
-	--color-primary-500: #ff99c8;
-	--color-primary-600: #e684b0;
-	--color-primary-700: #cc6f98;
-	--color-primary-800: #b25b80;
-	--color-primary-900: #994668;
-
-	/* === Secondary Tints & Shades (Lemon Chiffon) === */
-	--color-secondary-50: #fdf9d4;
-	--color-secondary-100: #fcf5c3;
-	--color-secondary-200: #fbf2b3;
-	--color-secondary-300: #faeea2;
-	--color-secondary-400: #f9eb91;
-	--color-secondary-500: #fcf6bd;
-	--color-secondary-600: #e3dca8;
-	--color-secondary-700: #cac38f;
-	--color-secondary-800: #b0a977;
-	--color-secondary-900: #96805e;
-
-	/* === Accent 1 Tints & Shades (Nyanza) === */
-	--color-accent-1-50: #e5faea;
-	--color-accent-1-100: #e0f8e6;
-	--color-accent-1-200: #daf6e1;
-	--color-accent-1-300: #d5f3dc;
-	--color-accent-1-400: #cff1d7;
-	--color-accent-1-500: #d0f4de;
-	--color-accent-1-600: #bbddc9;
-	--color-accent-1-700: #a7c8b3;
-	--color-accent-1-800: #93b29d;
-	--color-accent-1-900: #7f9d87;
-
-	/* === Accent 2 Tints & Shades (Uranian Blue) === */
-	--color-accent-2-50: #d5ecfb;
-	--color-accent-2-100: #c7e6fa;
-	--color-accent-2-200: #b9e0f9;
-	--color-accent-2-300: #abdaf8;
-	--color-accent-2-400: #9dd4f7;
-	--color-accent-2-500: #a9def9;
-	--color-accent-2-600: #94c6e0;
-	--color-accent-2-700: #86b0c9;
-	--color-accent-2-800: #789bb2;
-	--color-accent-2-900: #6a859b;
-
-	/* === Accent 3 Tints & Shades (Mauve) === */
-	--color-accent-3-50: #f1dafc;
-	--color-accent-3-100: #eecbf9;
-	--color-accent-3-200: #eabcf7;
-	--color-accent-3-300: #e7adf4;
-	--color-accent-3-400: #e39ef2;
-	--color-accent-3-500: #e4c1f9;
-	--color-accent-3-600: #cfa7dc;
-	--color-accent-3-700: #bb90c6;
-	--color-accent-3-800: #a778b0;
-	--color-accent-3-900: #93619a;
-
+	--color-primary: #01b3a7ff;
+	--color-secondary: #11263aff;
+	--color-accent-1: #162e44ff;
+	--color-accent-2: #112539ff;
+    --color-header-link-hover: #304559ff;
 	/* === UI Colors === */
-	--color-background: #f4f4f4;
+	--color-background: #ffffffff;
 	/* Soft Neutral Background for Better Eye Comfort */
-	--color-background-muted: #eaeaea;
-	--color-surface: #f0f0f0;
-	--color-error: #b00020;
-	--color-on-primary: #ffffff;
-	--color-on-secondary: #1f1f1f;
-	--color-on-background: #1f1f1f;
-	--color-on-surface: #1f1f1f;
-	--color-on-error: #ffffff;
+	--color-background-muted: #f7f7f7ff;
 
 	/* === Contrast & Accessibility === */
 	--color-primary-high-contrast: #c61e51;
@@ -89,9 +22,9 @@
 
 	/* === Typography & Iconography === */
 	--color-heading: #1f1f1f;
-	--color-body: #333333;
+	--color-body: #ffffffff;
 	--color-icon: #616161;
-	--color-navLink: #333333;
+	--color-navLink: #f7f7f7ff;
 }
 
 :root {
@@ -206,9 +139,7 @@
 	--color-card-foreground: var(--card-foreground);
 	--color-popover: var(--popover);
 	--color-popover-foreground: var(--popover-foreground);
-	--color-primary: var(--primary);
 	--color-primary-foreground: var(--primary-foreground);
-	--color-secondary: var(--secondary);
 	--color-secondary-foreground: var(--secondary-foreground);
 	--color-muted: var(--muted);
 	--color-muted-foreground: var(--muted-foreground);
@@ -281,4 +212,36 @@
 	.scrollarea::-webkit-scrollbar-corner {
 		background: transparent;
 	}
+}
+
+@keyframes twinkle {
+    0%,
+    100% {
+        opacity: 0.2;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+.animate-twinkle {
+    animation: twinkle 4s infinite ease-in-out;
+}
+
+@keyframes starfield {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 1000px 1000px;
+    }
+}
+
+.animate-starfield {
+    background-image: radial-gradient(white 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: starfield 60s linear infinite;
+    opacity: 0.05;
 }
